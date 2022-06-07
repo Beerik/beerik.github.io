@@ -25,18 +25,38 @@ const languageOptions = document.querySelectorAll(
 const sidemenuBtnOpen = document.getElementById("burger-open");
 const sidemenuBtnClose = document.getElementById("burger-close");
 const mobileMenu = document.getElementById("mobile-nav");
+let mobileLinks = document.querySelectorAll("#mobile-nav .nav-list a");
+let mobileMenuOverlay = document.getElementById("overlay");
+
+mobileLinks.forEach(function (element) {
+  element.addEventListener("click", (event) => {
+    closeMobileMenu();
+  });
+});
+
+mobileMenuOverlay.addEventListener("click", (event) => {
+  closeMobileMenu();
+});
 
 sidemenuBtnOpen.addEventListener("click", (event) => {
-  mobileMenu.classList.add("visible");
-  sidemenuBtnOpen.classList.add("hidden");
-  sidemenuBtnClose.classList.remove("hidden");
+  openMobileMenu();
 });
 
 sidemenuBtnClose.addEventListener("click", (event) => {
+  closeMobileMenu();
+});
+
+function openMobileMenu() {
+  mobileMenu.classList.add("visible");
+  sidemenuBtnOpen.classList.add("hidden");
+  sidemenuBtnClose.classList.remove("hidden");
+}
+
+function closeMobileMenu() {
   mobileMenu.classList.remove("visible");
   sidemenuBtnOpen.classList.remove("hidden");
   sidemenuBtnClose.classList.add("hidden");
-});
+}
 
 currentLanguage.addEventListener("click", (event) => {
   toggleLangMenu();
