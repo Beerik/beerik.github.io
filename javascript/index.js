@@ -22,6 +22,22 @@ const languageOptions = document.querySelectorAll(
   '[class*="language-option option-"]'
 );
 
+const sidemenuBtnOpen = document.getElementById("burger-open");
+const sidemenuBtnClose = document.getElementById("burger-close");
+const mobileMenu = document.getElementById("mobile-nav");
+
+sidemenuBtnOpen.addEventListener("click", (event) => {
+  mobileMenu.classList.add("visible");
+  sidemenuBtnOpen.classList.add("hidden");
+  sidemenuBtnClose.classList.remove("hidden");
+});
+
+sidemenuBtnClose.addEventListener("click", (event) => {
+  mobileMenu.classList.remove("visible");
+  sidemenuBtnOpen.classList.remove("hidden");
+  sidemenuBtnClose.classList.add("hidden");
+});
+
 currentLanguage.addEventListener("click", (event) => {
   toggleLangMenu();
 
@@ -49,7 +65,7 @@ function closeLangMenu() {
 }
 
 //##################################################################
-//######## menu highlight on scroll down
+//######## scroll events
 //##################################################################
 
 const navlinks = new Array("about", "projects", "skills", "contacts");
@@ -93,3 +109,32 @@ function setActiveLink(link) {
 function removeActiveLink(link) {
   document.querySelector('a[href="#' + link + '"').classList.remove("active");
 }
+
+window.onscroll = function (ev) {
+  if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
+    // you're at the bottom of the page
+    console.log("bottom");
+  }
+};
+
+//########################
+
+//   document.getElementById("#finger-guide").style.opacity = "0";
+//   document.getElementById("#sidemenu").classList.toggle("sidemenu-visibility");
+//   document.getElementById(".overlay").classList.toggle("overlay-visibility");
+//   document.body.classList.toggle("lock-scroll");
+// });
+
+// $("#menubtn a").on("click", function (e) {
+//   console.log("click"),
+//     $("#finger-guide").css("opacity", 0),
+//     $("#sidemenu").toggleClass("sidemenu-visibility"),
+//     $(".overlay").toggleClass("overlay-visibility"),
+//     document.body.classList.toggle("lock-scroll");
+// }),
+//   $(".overlay").on("click", function (e) {
+//     $("#finger-guide").css("opacity", 0),
+//       $("#sidemenu").toggleClass("sidemenu-visibility"),
+//       $(".overlay").toggleClass("overlay-visibility"),
+//       document.body.classList.toggle("lock-scroll");
+//   });

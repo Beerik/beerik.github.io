@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+Sitemmap: https://beerik.github.io/sitemap.txt

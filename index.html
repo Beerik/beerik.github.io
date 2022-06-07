@@ -4,6 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Erik Baldo" />
+    <meta
+      name="Description"
+      content="Erik Baldo - Personal Portfolio page hosted on GitHub"
+    />
+    <meta
+      name="Keywords"
+      content="Personal Page, Portfolio, GitHub, Web Develoment"
+    />
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
@@ -48,8 +57,6 @@
     <meta name="theme-color" content="#ffffff" />
 
     <title>Erik Baldo - Personal Portfolio</title>
-
-    <!--load all Font Awesome styles -->
     <link href="/resources/fontawesome/css/all.css" rel="stylesheet" />
     <link
       rel="stylesheet"
@@ -58,6 +65,13 @@
     <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
+    <header class="default-neon">
+      <div id="burger-btn">
+        <a href="#" id="burger-open" class="">&equiv;</a>
+        <a href="#" id="burger-close" class="hidden">&times;</a>
+      </div>
+    </header>
+
     <div class="wrapper">
       <nav id="primary-nav" class="sidebar default-neon">
         <ul class="nav-list">
@@ -69,6 +83,24 @@
       </nav>
 
       <main>
+        <nav id="mobile-nav" class="default-neon spacing-between">
+          <ul class="nav-list">
+            <li><a class="active" href="#about">about</a></li>
+            <li><a href="#projects">projects</a></li>
+            <li><a href="#skills">skills</a></li>
+            <li><a href="#contacts">contacts</a></li>
+          </ul>
+
+          <div id="mobile-nav-links">
+            <div>
+              <a href="imprint.html">Imprint</a>
+            </div>
+            <div>
+              <a href="datapolicy.html">Data Policy</a>
+            </div>
+          </div>
+        </nav>
+
         <div class="content">
           <section id="about">
             <h2>Hello World, I'm</h2>
@@ -134,7 +166,7 @@
 
                 <figure>
                   <img
-                    src="/resources/img/Screenshot_IlMulo.png"
+                    src="/resources/img/Screenshot_Codepen.png"
                     alt="Screenshot_Codepen"
                   />
                   <figcaption>
@@ -259,30 +291,11 @@
 
           <section id="contacts">
             <h2>
-              Im working to deliver a new Contact Page soon, thanks for the
-              patience
+              Im working to implement a Contact page that is compatible with
+              GitHub Pages soon, thanks for the patience.
             </h2>
             <p>
-              Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset
-              concludaturque et eum, altera fabulas ut quo. Atqui causae
-              gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
-              repudiandae nec et. Inciderint efficiantur his ad. Eum no
-              molestiae voluptatibus. Some text to enable scrolling.. Lorem
-              ipsum dolor sit amet, illum definitiones no quo, maluisset
-              concludaturque et eum, altera fabulas ut quo. Atqui causae
-              gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
-              repudiandae nec et. Inciderint efficiantur his ad. Eum no
-              molestiae voluptatibus. Some text to enable scrolling.. Lorem
-              ipsum dolor sit amet, illum definitiones no quo, maluisset
-              concludaturque et eum, altera fabulas ut quo. Atqui causae
-              gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
-              repudiandae nec et. Inciderint efficiantur his ad. Eum no
-              molestiae voluptatibus. Some text to enable scrolling.. Lorem
-              ipsum dolor sit amet, illum definitiones no quo, maluisset
-              concludaturque et eum, altera fabulas ut quo. Atqui causae
-              gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
-              repudiandae nec et. Inciderint efficiantur his ad. Eum no
-              molestiae voluptatibus.
+              For questions or enquiries please use the link to my GitHub below.
             </p>
           </section>
         </div>
@@ -311,8 +324,16 @@
           </nav>
 
           <div id="scroll-nav">
-            <a href="#" class="fa-solid fa-chevron-up"></a>
-            <a href="#" class="fa-solid fa-chevron-down"></a>
+            <a
+              href="#"
+              id="scroll-nav-top"
+              class="fade fa-solid fa-chevron-up"
+            ></a>
+            <a
+              href="#contacts"
+              id="scroll-nav-bottom"
+              class="fa-solid fa-chevron-down"
+            ></a>
           </div>
         </aside>
       </main>
@@ -320,10 +341,16 @@
     <footer class="default-neon spacing-between">
       <div class="spacing-between">
         Checkout my projects on:
-        <a href="github" class="fa-brands fa-github-square"></a>
-        <a href="behance" class="fa-brands fa-behance-square"></a>
+        <a
+          href="https://github.com/Beerik"
+          class="fa-brands fa-github-square"
+        ></a>
+        <a
+          href="https://www.behance.net/erikbaldo"
+          class="fa-brands fa-behance-square"
+        ></a>
       </div>
-      <div>
+      <div id="site-links">
         <p>
           <a href="imprint.html">Imprint</a>
           <a href="datapolicy.html">Data Policy</a>
