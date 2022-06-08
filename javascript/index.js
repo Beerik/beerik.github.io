@@ -110,6 +110,12 @@ for (var i = 0; i < navlinks.length; i++) {
 document.addEventListener("scroll", function (e) {
   let lastScrollPosition = window.scrollY;
 
+  if (window.scrollY == 0) {
+    document.getElementById("scroll-nav-top").classList.add("fade");
+  } else {
+    document.getElementById("scroll-nav-top").classList.remove("fade");
+  }
+
   for (var i = 0; i < sectionPositions.length; i++) {
     if (
       lastScrollPosition + navHeigth >= sectionPositions[i][0] &&
@@ -132,29 +138,8 @@ function removeActiveLink(link) {
 
 window.onscroll = function (ev) {
   if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
-    // you're at the bottom of the page
-    console.log("bottom");
+    document.getElementById("scroll-nav-bottom").classList.add("fade");
+  } else {
+    document.getElementById("scroll-nav-bottom").classList.remove("fade");
   }
 };
-
-//########################
-
-//   document.getElementById("#finger-guide").style.opacity = "0";
-//   document.getElementById("#sidemenu").classList.toggle("sidemenu-visibility");
-//   document.getElementById(".overlay").classList.toggle("overlay-visibility");
-//   document.body.classList.toggle("lock-scroll");
-// });
-
-// $("#menubtn a").on("click", function (e) {
-//   console.log("click"),
-//     $("#finger-guide").css("opacity", 0),
-//     $("#sidemenu").toggleClass("sidemenu-visibility"),
-//     $(".overlay").toggleClass("overlay-visibility"),
-//     document.body.classList.toggle("lock-scroll");
-// }),
-//   $(".overlay").on("click", function (e) {
-//     $("#finger-guide").css("opacity", 0),
-//       $("#sidemenu").toggleClass("sidemenu-visibility"),
-//       $(".overlay").toggleClass("overlay-visibility"),
-//       document.body.classList.toggle("lock-scroll");
-//   });
